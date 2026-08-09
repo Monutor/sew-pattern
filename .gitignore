@@ -1,3 +1,4 @@
 .superpowers/
 *.pem
 node_modules/
+AGENTS.md

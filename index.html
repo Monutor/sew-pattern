@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +27,13 @@
             --md-sys-shape-corner-large: 16px;
         }
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -46,7 +53,7 @@
         .hero-icon {
             width: 72px;
             height: 72px;
-            background: rgba(255,255,255,0.18);
+            background: rgba(255, 255, 255, 0.18);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -54,7 +61,11 @@
             margin: 0 auto 20px;
         }
 
-        .hero-icon svg { width: 40px; height: 40px; fill: var(--md-sys-color-on-primary); }
+        .hero-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--md-sys-color-on-primary);
+        }
 
         .hero h1 {
             font-size: 32px;
@@ -82,15 +93,19 @@
             border-radius: var(--md-sys-shape-corner-large);
             text-decoration: none;
             transition: box-shadow 0.2s, transform 0.15s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
         }
 
         .btn-download:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
             transform: translateY(-1px);
         }
 
-        .btn-download svg { width: 20px; height: 20px; fill: currentColor; }
+        .btn-download svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
 
         /* ── Layout ─────────────────────────────── */
         .container {
@@ -99,7 +114,9 @@
             padding: 0 24px;
         }
 
-        section { padding: 56px 0; }
+        section {
+            padding: 56px 0;
+        }
 
         .section-title {
             font-size: 22px;
@@ -138,7 +155,11 @@
             margin-bottom: 14px;
         }
 
-        .feature-icon svg { width: 22px; height: 22px; fill: var(--md-sys-color-on-primary-container); }
+        .feature-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--md-sys-color-on-primary-container);
+        }
 
         .feature-card h3 {
             font-size: 15px;
@@ -153,7 +174,9 @@
         }
 
         /* ── Steps ──────────────────────────────── */
-        .steps { counter-reset: step; }
+        .steps {
+            counter-reset: step;
+        }
 
         .step {
             display: flex;
@@ -166,8 +189,8 @@
             content: '';
             position: absolute;
             left: 23px;
-            top: 52px;
-            bottom: -8px;
+            top: 47px;
+            bottom: -34px;
             width: 2px;
             background: var(--md-sys-color-outline);
             opacity: 0.3;
@@ -212,10 +235,21 @@
             margin-top: 12px;
         }
 
-        .code-block .comment { color: #6c7086; }
-        .code-block .key { color: #89b4fa; }
-        .code-block .str { color: #a6e3a1; }
-        .code-block .num { color: #fab387; }
+        .code-block .comment {
+            color: #6c7086;
+        }
+
+        .code-block .key {
+            color: #89b4fa;
+        }
+
+        .code-block .str {
+            color: #a6e3a1;
+        }
+
+        .code-block .num {
+            color: #fab387;
+        }
 
         /* ── Warning box ────────────────────────── */
         .warning-box {
@@ -227,7 +261,9 @@
             font-size: 14px;
         }
 
-        .warning-box strong { color: var(--md-sys-color-on-primary-container); }
+        .warning-box strong {
+            color: var(--md-sys-color-on-primary-container);
+        }
 
         /* ── Screenshot mockup ──────────────────── */
         .mockup-wrap {
@@ -240,7 +276,7 @@
         .mockup-browser {
             background: #fff;
             border-radius: var(--md-sys-shape-corner-small);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
 
@@ -310,9 +346,9 @@
 
         .gif-demo {
             width: 100%;
-            max-width: 680px;
+            max-width: 450px;
             border-radius: var(--md-sys-shape-corner-medium);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
             display: block;
             margin: 0 auto;
         }
@@ -326,173 +362,215 @@
             color: var(--md-sys-color-on-surface-variant);
         }
 
-        footer a { color: var(--md-sys-color-primary); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        footer a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
+
 <body>
 
-<!-- ── Hero ─────────────────────────────── -->
-<header class="hero">
-    <div class="hero-icon">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM8 17h8v-2H8v2zm0-4h8v-2H8v2z"/></svg>
-    </div>
-    <h1>SEW Templates</h1>
-    <p>Автоматическое заполнение полей документов в платформе SEW шаблонами. Сохраняйте наборы полей — вводите одним кликом.</p>
-    <a class="btn-download" href="https://github.com/Monutor/sew-pattern/releases/tag/v1.0">
-        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-        Скачать SEW-Pattern.crx
-    </a>
-</header>
+    <!-- ── Hero ─────────────────────────────── -->
+    <header class="hero">
+        <div class="hero-icon">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM8 17h8v-2H8v2zm0-4h8v-2H8v2z" />
+            </svg>
+        </div>
+        <h1>SEW Templates</h1>
+        <p>Автоматическое заполнение полей документов в платформе SEW шаблонами. Сохраняйте наборы полей — вводите одним
+            кликом.</p>
+        <a class="btn-download" href="https://github.com/Monutor/sew-pattern/releases/tag/v1.0">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+            </svg>
+            Скачать SEW-Pattern.crx
+        </a>
+    </header>
 
-<!-- ── Features ─────────────────────────── -->
-<section>
-    <div class="container">
-        <h2 class="section-title">Что умеет расширение</h2>
-        <p class="section-subtitle">Автоматизация рутинного заполнения форм в SEW</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+    <!-- ── Features ─────────────────────────── -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Что умеет расширение</h2>
+            <p class="section-subtitle">Автоматизация рутинного заполнения форм в SEW</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" />
+                        </svg>
+                    </div>
+                    <h3>Шаблоны полей</h3>
+                    <p>Создавайте шаблоны с заранее заполненными полями: даты, ФИО водителя, сотрудников и другие
+                        параметры.</p>
                 </div>
-                <h3>Шаблоны полей</h3>
-                <p>Создавайте шаблоны с заранее заполненными полями: ТРН, даты, ФИО водителя, сотрудников и другие параметры.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                    </div>
+                    <h3>Заполнение в один клик</h3>
+                    <p>Откройте форму документа — выберите шаблон из выпадающего списка, и все поля заполнятся
+                        автоматически.</p>
                 </div>
-                <h3>Заполнение в один клик</h3>
-                <p>Откройте форму документа — выберите шаблон из выпадающего списка, и все поля заполнятся автоматически.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
+                        </svg>
+                    </div>
+                    <h3>Управление в браузере</h3>
+                    <p>Создавайте, редактируйте и удаляйте шаблоны прямо в панели настроек расширения — без сторонних
+                        инструментов.</p>
                 </div>
-                <h3>Управление в браузере</h3>
-                <p>Создавайте, редактируйте и удаляйте шаблоны прямо в панели настроек расширения — без сторонних инструментов.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ── How it works ─────────────────────── -->
-<section style="background: var(--md-sys-color-surface-variant);">
-    <div class="container">
-        <h2 class="section-title">Как это работает</h2>
-        <p class="section-subtitle">Принцип работы расширения на примере создания ТРН</p>
+    <!-- ── How it works ─────────────────────── -->
+    <section style="background: var(--md-sys-color-surface-variant);">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
+            <p class="section-subtitle">Принцип работы расширения на примере создания ТрН</p>
 
-        <img class="gif-demo" src="assets/browser_Vq9Gu5MzhL.gif" alt="Демонстрация работы расширения SEW Templates">
+            <img class="gif-demo" src="assets/browser_Vq9Gu5MzhL.gif"
+                alt="Демонстрация работы расширения SEW Templates">
 
-        <p style="margin-top:16px; font-size:14px; color:var(--md-sys-color-on-surface-variant);">
-            Расширение появляется в форме документа и предлагает выбрать сохранённый шаблон. После выбора все поля заполняются мгновенно — с корректной обработкой дат, выпадающих списков и числовых полей Angular.
-        </p>
-    </div>
-</section>
+            <p
+                style="margin-top:16px; font-size:14px; color:var(--md-sys-color-on-surface-variant); text-align:center;">
+                Расширение появляется в форме документа и предлагает выбрать сохранённый шаблон. После выбора все поля
+                заполняются мгновенно.
+            </p>
+        </div>
+    </section>
 
-<!-- ── Install ──────────────────────────── -->
-<section>
-    <div class="container">
-        <h2 class="section-title">Установка в Chrome</h2>
-        <p class="section-subtitle">Расширение распространяется как файл .crx — установка без Chrome Web Store</p>
+    <!-- ── Install ──────────────────────────── -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Установка в Chrome</h2>
+            <p class="section-subtitle">Расширение распространяется как файл .crx — установка без Chrome Web Store</p>
 
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Скачайте файл расширения</h3>
-                    <p>Перейдите на страницу Releases и скачайте файл <code>SEW-Pattern.crx</code>.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Скачайте файл расширения</h3>
+                        <p>Перейдите на страницу Releases и <a
+                                href="https://github.com/Monutor/sew-pattern/releases/tag/v1.0" target="_blank">скачайте
+                                файл <code>SEW-Pattern.crx</code></a>.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Откройте страницу расширений</h3>
+                        <p>В адресной строке Chrome введите <code>chrome://extensions/</code> и нажмите Enter.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Включите режим разработчика</h3>
+                        <p>Переключатель <strong>Режим разработчика</strong> в правом верхнем углу страницы — включите
+                            его.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Перетащите .crx файл</h3>
+                        <p>Откройте папку со скачанным файлом и перетащите <code>SEW-Pattern.crx</code> прямо на
+                            страницу <code>chrome://extensions/</code>.</p>
+                        <div class="warning-box">
+                            <strong>Обратите внимание:</strong> Chrome может запросить подтверждение установки.
+                            Разрешите установку — расширение добавится в список.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Готово!</h3>
+                        <p>Откройте <a href="https://sew.mvideoeldorado.ru" target="_blank"
+                                style="color:var(--md-sys-color-primary);">sew.mvideoeldorado.ru</a> и зайдите в раздел
+                            "Отгрузка", нажмите "Печать документов". В правом верхнем углу появится панель шаблонов.</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Откройте страницу расширений</h3>
-                    <p>В адресной строке Chrome введите <code>chrome://extensions/</code> и нажмите Enter.</p>
+    <!-- ── How to use ───────────────────────── -->
+    <section style="background: var(--md-sys-color-surface-variant);">
+        <div class="container">
+            <h2 class="section-title">Как пользоваться</h2>
+            <p class="section-subtitle">Создание шаблона и заполнение формы</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Откройте настройки расширения</h3>
+                        <p>Нажмите на иконку SEW Templates в панели Chrome → значок шестерёнки (справа вверху).</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Включите режим разработчика</h3>
-                    <p>Переключатель <strong>Режим разработчика</strong> в правом верхнем углу страницы — включите его.</p>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Создайте шаблон</h3>
+                        <p>Заполните форму: укажите название шаблона и значения полей, которые хотите сохранять. Нажмите
+                            <strong>Сохранить</strong>.
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3>Перетащите .crx файл</h3>
-                    <p>Откройте папку со скачанным файлом и перетащите <code>SEW-Pattern.crx</code> прямо на страницу <code>chrome://extensions/</code>.</p>
-                    <div class="warning-box">
-                        <strong>Обратите внимание:</strong> Chrome может запросить подтверждение установки. Разрешите установку — расширение добавится в список.
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Заполните форму документооборота</h3>
+                        <p>Вернитесь на SEW, откройте раздел "Отгрузка", нажмите "Печать документов". Вверху формы
+                            появится выпадающий список шаблонов — выберите нужный.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Проверьте результат</h3>
+                        <p>Все поля заполнятся автоматически.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="step">
-                <div class="step-number">5</div>
-                <div class="step-content">
-                    <h3>Готово!</h3>
-                    <p>Откройте <a href="https://sew.mvideoeldorado.ru" target="_blank" style="color:var(--md-sys-color-primary);">sew.mvideoeldorado.ru</a> и откройте любую форму документа. В правом верхнем углу появится панель шаблонов.</p>
-                </div>
+            <div class="warning-box" style="margin-top:24px;">
+                <strong>Совет:</strong> Создайте шаблоны для типовых документов вашей компании — заполнение будет
+                занимать секунды вместо минут.
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ── How to use ───────────────────────── -->
-<section style="background: var(--md-sys-color-surface-variant);">
-    <div class="container">
-        <h2 class="section-title">Как пользоваться</h2>
-        <p class="section-subtitle">Создание шаблона и заполнение формы</p>
-
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Откройте настройки расширения</h3>
-                    <p>Нажмите на иконку SEW Templates в панели Chrome → значок шестерёнки (справа вверху) или перейдите по адресу <code>chrome-extension://&lt;ID&gt;/options/options.html</code>.</p>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Создайте шаблон</h3>
-                    <p>Заполните форму: укажите название шаблона и значения полей, которые хотите сохранять. Нажмите <strong>Сохранить</strong>.</p>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Заполните форму документооборота</h3>
-                    <p>Вернитесь на SEW, откройте нужную форму (ТРН, акт и т.д.). Вверху формы появится выпадающий список шаблонов — выберите нужный.</p>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3>Проверьте результат</h3>
-                    <p>Все поля заполнятся автоматически. Даты конвертируются в формат <code>ДД.ММ.ГГГГ</code>, числовые поля — с правильными разделителями.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="warning-box" style="margin-top:24px;">
-            <strong>Совет:</strong> Создайте шаблоны для типовых документов вашей компании — заполнение будет занимать секунды вместо минут.
-        </div>
-    </div>
-</section>
-
-<!-- ── Footer ───────────────────────────── -->
-<footer>
-    <p>SEW Templates Extension &copy; 2026 &middot; <a href="https://github.com/Monutor/sew-pattern" target="_blank">GitHub</a> &middot; <a href="https://github.com/Monutor/sew-pattern/releases/tag/v1.0">Скачать v1.0</a></p>
-</footer>
+    <!-- ── Footer ───────────────────────────── -->
+    <footer>
+        <p>SEW Templates Extension &copy; 2026 &middot; <a href="https://github.com/Monutor/sew-pattern"
+                target="_blank">GitHub</a> &middot; <a
+                href="https://github.com/Monutor/sew-pattern/releases/tag/v1.0">Скачать v1.0</a></p>
+    </footer>
 
 </body>
+
 </html>
