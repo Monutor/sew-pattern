@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEW Templates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --md-sys-color-primary: #0061a4;
+            --md-sys-color-on-primary: #ffffff;
+            --md-sys-color-primary-container: #d3e5ff;
+            --md-sys-color-on-primary-container: #001d35;
+            --md-sys-color-secondary-container: #d6e4f2;
+            --md-sys-color-on-secondary-container: #0e1d2a;
+            --md-sys-color-surface: #fafafa;
+            --md-sys-color-on-surface: #212121;
+            --md-sys-color-surface-variant: #e1e2ec;
+            --md-sys-color-on-surface-variant: #44474f;
+            --md-sys-color-outline: #74777f;
+            --md-sys-color-primary-dark: #00479b;
+            --md-sys-color-hover: rgba(0, 0, 0, 0.08);
+            --md-sys-shape-corner-small: 8px;
+            --md-sys-shape-corner-medium: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            width: 320px;
+            min-height: 400px;
+            overflow-x: hidden;
+        }
+
+        /* ── Top bar ─────────────────────────────── */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            height: 52px;
+            padding: 0 16px;
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .top-bar-title {
+            flex: 1;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+        }
+
+        /* ── Icon buttons ────────────────────────── */
+        .icon-btn-round {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            color: var(--md-sys-color-on-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s;
+        }
+
+        .icon-btn-round:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .icon-btn-round svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* ── List ────────────────────────────────── */
+        .template-card-list {
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            max-height: calc(400px - 52px);
+            overflow-y: auto;
+        }
+
+        /* ── Card ────────────────────────────────── */
+        .template-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: var(--md-sys-shape-corner-small);
+            cursor: pointer;
+            transition: background 0.15s, box-shadow 0.15s;
+        }
+
+        .template-card:hover {
+            background: var(--md-sys-color-hover);
+        }
+
+        .template-card:active {
+            background: rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon-wrap {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--md-sys-color-primary-container);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .card-icon-wrap svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--md-sys-color-on-primary-container);
+        }
+
+        .card-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--md-sys-color-on-surface);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-top: 2px;
+        }
+
+        /* ── Empty state ─────────────────────────── */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 24px;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .empty-state-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--md-sys-color-secondary-container);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .empty-state-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--md-sys-color-on-secondary-container);
+        }
+
+        .empty-state p {
+            font-size: 13px;
+            line-height: 1.6;
+            text-align: center;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        /* ── Error state ─────────────────────────── */
+        .error-state {
+            padding: 24px 16px;
+            font-size: 13px;
+            color: #d32f2f;
+            text-align: center;
+        }
+
+        /* ── Scrollbar ───────────────────────────── */
+        .template-card-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .template-card-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .template-card-list::-webkit-scrollbar-thumb {
+            background: var(--md-sys-color-outline);
+            border-radius: 2px;
+        }
+
+        /* ── Links ───────────────────────────────── */
+        a { text-decoration: none; color: inherit; }
+    </style>
+</head>
+<body>
+    <!-- Top bar -->
+    <div class="top-bar">
+        <span class="top-bar-title">Шаблоны</span>
+        <button class="icon-btn-round" id="openOptions" title="Настройки" aria-label="Открыть настройки">
+            <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.488.488 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.488.488 0 00-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1115.6 12 3.6 3.6 0 0112 15.6z"/></svg>
+        </button>
+    </div>
+
+    <!-- Template card list -->
+    <div id="templateList" class="template-card-list"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
