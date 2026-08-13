@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Управление шаблонами - SEW Templates</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="options.js"></script>
+    <script src="options.js" defer></script>
     <style>
         :root {
             --md-sys-color-primary: #0061a4;
@@ -32,7 +32,7 @@
             font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--md-sys-color-surface);
             color: var(--md-sys-color-on-surface);
-            min-height: 100vh;
+            min-height: min(100vh, 100dvh);
             display: flex;
             flex-direction: column;
         }
@@ -55,7 +55,7 @@
         }
 
         .top-bar-title {
-            font-size: 15px;
+            font-size: 0.9375rem;
             font-weight: 500;
             letter-spacing: 0.1px;
         }
@@ -166,7 +166,7 @@
             width: 520px; max-width: 90vw;
             max-height: 85vh;
             display: flex; flex-direction: column;
-            overflow: hidden;
+            overflow: auto;
         }
 
         .modal-header {
@@ -335,12 +335,20 @@
 
         /* ── prefers-reduced-motion ─────────────── */
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
+            .template-card,
+            .icon-btn,
+            .btn-filled,
+            .btn-outlined,
+            .preset-option,
+            .fab-btn,
+            .toast,
+            .modal-overlay {
                 transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
                 scroll-behavior: auto !important;
             }
+
+            .template-card:hover { transform: none; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
         }
 
         /* ── focus-visible ──────────────────────── */
@@ -384,7 +392,7 @@
                 <div class="modal-body">
                     <!-- Template name -->
                     <div style="margin-bottom:16px">
-                        <label for="templateName" style="display:block;font-size:12px;color:var(--md-sys-color-on-surface-variant);margin-bottom:4px">Название шаблона *</label>
+                        <label for="templateName" style="display:block;font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);margin-bottom:4px">Название шаблона *</label>
                         <input type="text" maxlength="50" id="templateName" name="templateName" class="outlined-input" required style="width:100%">
                         <span class="char-counter" id="nameCounter">0/50</span>
                     </div>
@@ -401,11 +409,11 @@
                         <div class="field-group-title">Сотрудник, разрешивший отпуск товара</div>
                         <div class="field-grid">
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="approvedEmployeeName" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
+                                <label for="approvedEmployeeName" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
                                 <input type="text" id="approvedEmployeeName" name="approvedEmployeeName" data-field="approvedEmployeeName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
                             </div>
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="approvedEmployeePosition" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Должность</label>
+                                <label for="approvedEmployeePosition" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Должность</label>
                                 <input type="text" id="approvedEmployeePosition" name="approvedEmployeePosition" data-field="approvedEmployeePosition" placeholder="Должность" class="outlined-input" style="width:100%">
                             </div>
                         </div>
@@ -413,11 +421,11 @@
                         <div class="field-group-title">Сотрудник, производящий отпуск товара</div>
                         <div class="field-grid">
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="performEmployeeName" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
+                                <label for="performEmployeeName" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
                                 <input type="text" id="performEmployeeName" name="performEmployeeName" data-field="performEmployeeName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
                             </div>
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="performEmployeePosition" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Должность</label>
+                                <label for="performEmployeePosition" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Должность</label>
                                 <input type="text" id="performEmployeePosition" name="performEmployeePosition" data-field="performEmployeePosition" placeholder="Должность" class="outlined-input" style="width:100%">
                             </div>
                         </div>
@@ -425,11 +433,11 @@
                         <div class="field-group-title">Сотрудник, осуществляющий транспортировку товара</div>
                         <div class="field-grid">
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="agentFullName" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
+                                <label for="agentFullName" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
                                 <input type="text" id="agentFullName" name="agentFullName" data-field="agentFullName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
                             </div>
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="agentPosition" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Должность</label>
+                                <label for="agentPosition" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Должность</label>
                                 <input type="text" id="agentPosition" name="agentPosition" data-field="agentPosition" placeholder="Должность" class="outlined-input" style="width:100%">
                             </div>
                         </div>
@@ -437,21 +445,21 @@
                         <div class="field-group-title">Удостоверительные документы</div>
                         <div class="field-grid">
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="agentLicense" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Удостоверение</label>
+                                <label for="agentLicense" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Удостоверение</label>
                                 <input type="text" id="agentLicense" name="agentLicense" data-field="agentLicense" placeholder="Удостоверение" class="outlined-input" style="width:100%">
                             </div>
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="attorneyPowerNumber" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Номер доверенности</label>
+                                <label for="attorneyPowerNumber" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Номер доверенности</label>
                                 <input type="text" id="attorneyPowerNumber" name="attorneyPowerNumber" data-field="attorneyPowerNumber" placeholder="Номер доверенности" class="outlined-input" style="width:100%">
                             </div>
                         </div>
                         <div class="field-grid">
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="attorneyPowerGaveOut" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Кем выдана</label>
+                                <label for="attorneyPowerGaveOut" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Кем выдана</label>
                                 <input type="text" id="attorneyPowerGaveOut" name="attorneyPowerGaveOut" data-field="attorneyPowerGaveOut" placeholder="Кем выдана" class="outlined-input" style="width:100%">
                             </div>
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="attorneyPowerDate" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Дата выдачи</label>
+                                <label for="attorneyPowerDate" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Дата выдачи</label>
                                 <input type="date" id="attorneyPowerDate" name="attorneyPowerDate" data-field="attorneyPowerDate" class="outlined-input" style="width:100%">
                             </div>
                         </div>
@@ -459,7 +467,7 @@
                         <div class="field-group-title">Транспортное средство</div>
                         <div class="field-grid">
                             <div style="display:flex;flex-direction:column;gap:4px;">
-                                <label for="carModel" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Марка ТС</label>
+                                <label for="carModel" style="font-size:0.75rem;color:var(--md-sys-color-on-surface-variant);">Марка ТС</label>
                                 <input type="text" id="carModel" name="carModel" data-field="carModel" placeholder="Марка ТС" class="outlined-input" style="width:100%">
                             </div>
                         </div>

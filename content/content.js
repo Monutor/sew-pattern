@@ -8,7 +8,7 @@ function handleStorageError(err) {
     if (err && /context\s*invalidated/i.test(err.message)) {
         showContextRestartToast();
     } else {
-        console.warn('SEW: chrome.storage error', err && err.message);
+        // silent in production
     }
 }
 
@@ -50,6 +50,9 @@ function fillFormFields(fields) {
     });
 }
 
+// Cache for label lookups by element id
+const _labelCache = new Map();
+
 // Get field name from element
 function getFieldName(element) {
     // Angular sets formControlName in lowercase: 'formcontrolname'
@@ -64,8 +67,12 @@ function getFieldName(element) {
     if (element.id) {
         return element.id;
     }
-    // Try to find label associated with the input
-    const label = document.querySelector(`label[for="${element.id}"]`);
+    // Try to find label associated with the input (cached)
+    let label = _labelCache.get(element.id);
+    if (!label && element.id) {
+        label = document.querySelector(`label[for="${element.id}"]`);
+        _labelCache.set(element.id, label);
+    }
     if (label) {
         return label.textContent.trim().replace('*', '').trim();
     }

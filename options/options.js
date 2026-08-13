@@ -244,9 +244,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let toastTimer = null;
+    const _toastSelector = '.toast';
 
     function showToast(message) {
-        const existing = document.querySelector('.toast');
+        const existing = document.querySelector(_toastSelector);
         if (existing) existing.remove();
         if (toastTimer) clearTimeout(toastTimer);
 

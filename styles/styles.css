@@ -276,3 +276,22 @@ select.filled-field {
 .btn-outlined:hover {
     background: var(--md-sys-color-hover, rgba(0,0,0,0.08));
 }
+
+/* ── prefers-reduced-motion ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .sew-fab,
+    .sew-fab-panel-overlay,
+    .sew-fab-panel,
+    .template-selector,
+    .icon-btn,
+    .btn-filled,
+    .btn-outlined,
+    .preset-option,
+    .fab-btn,
+    .toast {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .sew-fab:hover { transform: none; }
+}
