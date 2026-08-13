@@ -33,14 +33,22 @@
             background: var(--md-sys-color-surface);
             color: var(--md-sys-color-on-surface);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         /* ── Top bar ─────────────────────────────── */
         .top-bar {
             display: flex;
             align-items: center;
-            height: 52px;
-            padding: 0 16px;
+            height: 3.25rem;
+            padding: 0 1rem;
             background: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -52,16 +60,15 @@
             letter-spacing: 0.1px;
         }
 
-        .topbar-actions { display: flex; gap: 8px; margin-left: 16px; }
+        .topbar-actions { display: flex; gap: 8px; margin-left: auto; align-items: center; }
 
         /* ── Card list ───────────────────────────── */
         .template-card-list {
-            padding: 8px;
+            padding: 0.5rem;
             display: flex;
             flex-direction: column;
-            gap: 4px;
-            min-height: 60vh;
-            padding-bottom: 80px;
+            gap: 0.25rem;
+            padding-bottom: 5rem;
         }
 
         /* ── Card ────────────────────────────────── */
@@ -83,13 +90,13 @@
         .card-row {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
         }
 
         .card-icon-wrap {
-            width: 36px;
-            height: 36px;
+            width: 2.25rem;
+            height: 2.25rem;
             border-radius: 50%;
             background: var(--md-sys-color-primary-container);
             display: flex;
@@ -97,58 +104,51 @@
             justify-content: center;
             flex-shrink: 0;
         }
-        .card-icon-wrap svg { width: 20px; height: 20px; fill: var(--md-sys-color-on-primary-container); }
+        .card-icon-wrap svg { width: 1.25rem; height: 1.25rem; fill: var(--md-sys-color-on-primary-container); }
 
         .card-text { flex: 1; min-width: 0; }
         .card-name {
-            font-size: 14px; font-weight: 500;
+            font-size: 0.875rem; font-weight: 500;
             color: var(--md-sys-color-on-surface);
             overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
         }
         .card-meta {
-            font-size: 12px; color: var(--md-sys-color-on-surface-variant); margin-top: 2px;
+            font-size: 0.75rem; color: var(--md-sys-color-on-surface-variant); margin-top: 2px;
         }
 
         /* ── Action buttons ─────────────────────── */
         .card-actions { display: flex; gap: 4px; flex-shrink: 0; }
         .icon-btn {
-            width: 32px; height: 32px; border-radius: 50%; border: none;
+            width: 2rem; height: 2rem; border-radius: 50%; border: none;
             background: transparent; cursor: pointer; color: #757575;
             display: flex; align-items: center; justify-content: center;
             transition: background 0.15s, color 0.15s;
         }
         .icon-btn:hover { background: var(--md-sys-color-hover); color: var(--md-sys-color-primary); }
         .icon-btn.delete:hover { background: #ffebee; color: #d32f2f; }
-        .icon-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        .icon-btn svg { width: 1.125rem; height: 1.125rem; fill: currentColor; }
 
         /* ── Empty state ─────────────────────────── */
         .empty-state {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            padding: 48px 24px; color: var(--md-sys-color-on-surface-variant);
+            padding: 3rem 1.5rem; color: var(--md-sys-color-on-surface-variant);
         }
-        .empty-state svg { width: 64px; height: 64px; fill: var(--md-sys-color-outline); margin-bottom: 12px; }
-        .empty-state p { font-size: 13px; line-height: 1.6; text-align: center; }
+        .empty-state svg { width: 4rem; height: 4rem; fill: var(--md-sys-color-outline); margin-bottom: 0.75rem; }
+        .empty-state p { font-size: 0.8125rem; line-height: 1.6; text-align: center; }
 
         /* ── Error state ─────────────────────────── */
-        .error-state { padding: 16px; font-size: 13px; color: #d32f2f; }
+        .error-state { padding: 1rem; font-size: 0.8125rem; color: #d32f2f; }
 
         /* ── FAB ─────────────────────────────────── */
-        .fab-wrap {
-            padding: 16px;
-            display: flex; justify-content: flex-end;
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: var(--md-sys-color-surface);
-        }
         .fab-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 0 16px; height: 40px; border-radius: 20px; border: none;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0 1rem; height: 2.5rem; border-radius: 1.25rem; border: none;
             background: var(--md-sys-color-primary); color: #fff;
-            font-size: 14px; font-weight: 500; cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: background 0.2s, box-shadow 0.2s;
+            font-size: 0.875rem; font-weight: 500; cursor: pointer;
+            transition: background 0.2s;
         }
-        .fab-btn:hover { background: var(--md-sys-color-primary-dark); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); }
-        .fab-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .fab-btn:hover { background: var(--md-sys-color-primary-dark); }
+        .fab-btn svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
 
         /* ── Modal overlay ───────────────────────── */
         .modal-overlay {
@@ -171,42 +171,42 @@
 
         .modal-header {
             display: flex; align-items: center;
-            padding: 16px 24px 12px;
-            border-bottom: 1px solid #e8e8e8; gap: 12px;
+            padding: 1rem 1.5rem 0.75rem;
+            border-bottom: 1px solid #e8e8e8; gap: 0.75rem;
         }
         .modal-title {
-            flex: 1; font-size: 16px; font-weight: 500;
+            flex: 1; font-size: 1rem; font-weight: 500;
             color: var(--md-sys-color-on-surface);
         }
         .modal-close-btn {
-            width: 36px; height: 36px; border-radius: 50%; border: none;
+            width: 2.25rem; height: 2.25rem; border-radius: 50%; border: none;
             background: transparent; cursor: pointer;
             color: var(--md-sys-color-on-surface-variant);
             display: flex; align-items: center; justify-content: center;
             transition: background 0.15s;
         }
         .modal-close-btn:hover { background: var(--md-sys-color-hover); }
-        .modal-close-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .modal-close-btn svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
 
-        .modal-body { padding: 16px 24px; overflow-y: auto; flex: 1; }
+        .modal-body { padding: 1rem 1.5rem; overflow-y: auto; flex: 1; }
 
         /* ── Form fields ─────────────────────────── */
         .field-group-title {
-            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
             letter-spacing: 0.8px; color: var(--md-sys-color-primary);
             margin: 20px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #e0e0e0;
         }
         .field-group-title:first-child { margin-top: 0; }
 
-        .field-grid { display: flex; gap: 16px; margin-bottom: 4px; }
+        .field-grid { display: flex; gap: 1rem; margin-bottom: 0.25rem; }
         .field-grid > * { flex: 1; min-width: 0; }
 
         .outlined-input {
-            width: 100%; padding: 12px 14px;
+            width: 100%; padding: 0.75rem 0.875rem;
             border: 1px solid var(--md-sys-color-outline);
             border-radius: var(--md-sys-shape-corner-small);
-            font-size: 14px; color: var(--md-sys-color-on-surface);
-            background: #fff; outline: none;
+            font-size: 0.875rem; color: var(--md-sys-color-on-surface);
+            background: #fff;
             transition: border-color 0.15s, box-shadow 0.15s;
         }
         .outlined-input:focus {
@@ -215,34 +215,34 @@
         }
         .outlined-input::placeholder { color: var(--md-sys-color-on-surface-variant); }
 
-        .char-counter { display: block; margin-top: 4px; font-size: 12px; color: var(--md-sys-color-on-surface-variant); text-align: right; }
+        .char-counter { display: block; margin-top: 0.25rem; font-size: 0.75rem; color: var(--md-sys-color-on-surface-variant); text-align: right; }
 
         /* ── Modal actions ───────────────────────── */
         .modal-actions {
-            display: flex; justify-content: flex-end; gap: 8px;
-            padding: 12px 24px 16px; border-top: 1px solid #e8e8e8;
+            display: flex; justify-content: flex-end; gap: 0.5rem;
+            padding: 0.75rem 1.5rem 1rem; border-top: 1px solid #e8e8e8;
         }
         .btn-filled {
-            padding: 0 16px; height: 36px; border-radius: 20px; border: none;
+            padding: 0 1rem; height: 2.25rem; border-radius: 1.25rem; border: none;
             background: var(--md-sys-color-primary); color: #fff;
-            font-size: 14px; font-weight: 500; cursor: pointer;
+            font-size: 0.875rem; font-weight: 500; cursor: pointer;
             transition: background 0.2s, box-shadow 0.2s;
         }
         .btn-filled:hover { background: var(--md-sys-color-primary-dark); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); }
         .btn-outlined {
-            padding: 0 16px; height: 36px; border-radius: 20px;
+            padding: 0 1rem; height: 2.25rem; border-radius: 1.25rem;
             border: 1px solid var(--md-sys-color-outline); background: transparent;
-            color: var(--md-sys-color-primary); font-size: 14px; font-weight: 500; cursor: pointer;
+            color: var(--md-sys-color-primary); font-size: 0.875rem; font-weight: 500; cursor: pointer;
             transition: background 0.15s, border-color 0.15s;
         }
         .btn-outlined:hover { background: var(--md-sys-color-hover); }
-        .topbar-btn { height: 32px; padding: 0 12px; font-size: 13px; color: var(--md-sys-color-on-primary); }
+        .topbar-btn { height: 2rem; padding: 0 0.75rem; font-size: 0.8125rem; color: var(--md-sys-color-on-primary); }
 
         /* ── Preset selector ─────────────────────── */
-        .preset-selector { margin-bottom: 16px; }
-        .preset-options { display: flex; gap: 8px; }
+        .preset-selector { margin-bottom: 1rem; }
+        .preset-options { display: flex; gap: 0.5rem; }
         .preset-option {
-            padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer;
+            padding: 0.375rem 1rem; border-radius: 1.25rem; font-size: 0.8125rem; cursor: pointer;
             border: 1px solid var(--md-sys-color-outline); background: var(--md-sys-color-surface);
             color: var(--md-sys-color-on-surface); transition: all 0.2s;
         }
@@ -251,7 +251,7 @@
 
         /* ── Scrollbar ───────────────────────────── */
         .template-card-list::-webkit-scrollbar,
-        .modal-body::-webkit-scrollbar { width: 4px; }
+        .modal-body::-webkit-scrollbar { width: 0.25rem; }
         .template-card-list::-webkit-scrollbar-track,
         .modal-body::-webkit-scrollbar-track { background: transparent; }
         .template-card-list::-webkit-scrollbar-thumb,
@@ -265,9 +265,9 @@
             transform: translateX(-50%) translateY(20px);
             background: #323232;
             color: #fff;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 500;
-            padding: 12px 20px;
+            padding: 0.75rem 1.25rem;
             border-radius: var(--md-sys-shape-corner-small);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             z-index: 2147483647;
@@ -285,11 +285,11 @@
         .template-card[draggable="true"] { cursor: grab; }
         .template-card.dragging { opacity: 0.5; }
         .template-card.drag-over { outline: 2px dashed var(--md-sys-color-primary); outline-offset: -2px; }
-        .drag-hint { font-size: 12px; color: var(--md-sys-color-on-surface-variant); padding: 4px 16px; }
+        .drag-hint { font-size: 0.75rem; color: var(--md-sys-color-on-surface-variant); padding: 0.25rem 1rem; }
 
         /* ── Confirm dialog ─────────────────────── */
         .confirm-modal {
-            max-width: 340px;
+            max-width: 21.25rem;
             width: 90vw;
         }
         .confirm-actions {
@@ -297,12 +297,12 @@
         }
         .btn-danger {
             padding: 0 16px;
-            height: 36px;
-            border-radius: 20px;
+            height: 2.25rem;
+            border-radius: 1.25rem;
             border: none;
             background: #d32f2f;
             color: #fff;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 500;
             cursor: pointer;
             transition: background 0.2s, box-shadow 0.2s;
@@ -312,34 +312,62 @@
             box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
         }
         .confirm-text {
-            padding: 16px 24px;
-            font-size: 14px;
+            padding: 1rem 1.5rem;
+            font-size: 0.875rem;
             line-height: 1.6;
             color: var(--md-sys-color-on-surface);
+        }
+        /* ── Footer ─────────────────────────────── */
+        .footer {
+            background: var(--md-sys-color-surface-variant);
+            padding: 20px 16px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+        .footer a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── prefers-reduced-motion ─────────────── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ── focus-visible ──────────────────────── */
+        .outlined-input:focus:not(:focus-visible) {
+            box-shadow: none;
         }
     </style>
 </head>
 <body>
-    <!-- Top bar -->
-    <div class="top-bar">
+    <main>
+        <!-- Top bar -->
+        <div class="top-bar">
         <span class="top-bar-title">Управление шаблонами</span>
         <div class="topbar-actions">
             <button type="button" class="btn-outlined topbar-btn" id="importBtn" title="Импорт шаблонов">Импорт</button>
             <button type="button" class="btn-outlined topbar-btn" id="exportBtn" title="Экспорт шаблонов">Экспорт</button>
             <input type="file" id="importFileInput" accept=".json,application/json" hidden>
+            <button type="button" class="fab-btn" id="createTemplateBtn" aria-label="Создать шаблон">
+                <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"/></svg>
+                <span>Шаблон</span>
+            </button>
         </div>
-    </div>
+        </div>
 
-    <!-- Template card list -->
-    <div id="template-list" class="template-card-list"></div>
-
-    <!-- FAB -->
-    <div class="fab-wrap">
-        <button class="fab-btn" id="createTemplateBtn" aria-label="Создать шаблон">
-            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"/></svg>
-            <span>Шаблон</span>
-        </button>
-    </div>
+        <!-- Template card list -->
+        <div id="template-list" class="template-card-list"></div>
+    </main>
 
     <!-- Modal -->
     <div class="modal-overlay" id="templateModal">
@@ -372,35 +400,68 @@
                     <div id="preset-fields-trn" class="preset-fields-container">
                         <div class="field-group-title">Сотрудник, разрешивший отпуск товара</div>
                         <div class="field-grid">
-                            <input type="text" name="approvedEmployeeName" data-field="approvedEmployeeName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
-                            <input type="text" name="approvedEmployeePosition" data-field="approvedEmployeePosition" placeholder="Должность" class="outlined-input" style="width:100%">
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="approvedEmployeeName" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
+                                <input type="text" id="approvedEmployeeName" name="approvedEmployeeName" data-field="approvedEmployeeName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="approvedEmployeePosition" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Должность</label>
+                                <input type="text" id="approvedEmployeePosition" name="approvedEmployeePosition" data-field="approvedEmployeePosition" placeholder="Должность" class="outlined-input" style="width:100%">
+                            </div>
                         </div>
 
                         <div class="field-group-title">Сотрудник, производящий отпуск товара</div>
                         <div class="field-grid">
-                            <input type="text" name="performEmployeeName" data-field="performEmployeeName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
-                            <input type="text" name="performEmployeePosition" data-field="performEmployeePosition" placeholder="Должность" class="outlined-input" style="width:100%">
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="performEmployeeName" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
+                                <input type="text" id="performEmployeeName" name="performEmployeeName" data-field="performEmployeeName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="performEmployeePosition" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Должность</label>
+                                <input type="text" id="performEmployeePosition" name="performEmployeePosition" data-field="performEmployeePosition" placeholder="Должность" class="outlined-input" style="width:100%">
+                            </div>
                         </div>
 
                         <div class="field-group-title">Сотрудник, осуществляющий транспортировку товара</div>
                         <div class="field-grid">
-                            <input type="text" name="agentFullName" data-field="agentFullName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
-                            <input type="text" name="agentPosition" data-field="agentPosition" placeholder="Должность" class="outlined-input" style="width:100%">
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="agentFullName" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Ф.И.О.</label>
+                                <input type="text" id="agentFullName" name="agentFullName" data-field="agentFullName" placeholder="Ф.И.О." class="outlined-input" style="width:100%">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="agentPosition" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Должность</label>
+                                <input type="text" id="agentPosition" name="agentPosition" data-field="agentPosition" placeholder="Должность" class="outlined-input" style="width:100%">
+                            </div>
                         </div>
 
                         <div class="field-group-title">Удостоверительные документы</div>
                         <div class="field-grid">
-                            <input type="text" name="agentLicense" data-field="agentLicense" placeholder="Удостоверение" class="outlined-input" style="width:100%">
-                            <input type="text" name="attorneyPowerNumber" data-field="attorneyPowerNumber" placeholder="Номер доверенности" class="outlined-input" style="width:100%">
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="agentLicense" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Удостоверение</label>
+                                <input type="text" id="agentLicense" name="agentLicense" data-field="agentLicense" placeholder="Удостоверение" class="outlined-input" style="width:100%">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="attorneyPowerNumber" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Номер доверенности</label>
+                                <input type="text" id="attorneyPowerNumber" name="attorneyPowerNumber" data-field="attorneyPowerNumber" placeholder="Номер доверенности" class="outlined-input" style="width:100%">
+                            </div>
                         </div>
                         <div class="field-grid">
-                            <input type="text" name="attorneyPowerGaveOut" data-field="attorneyPowerGaveOut" placeholder="Кем выдана" class="outlined-input" style="width:100%">
-                            <input type="date" name="attorneyPowerDate" data-field="attorneyPowerDate" class="outlined-input" style="width:100%">
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="attorneyPowerGaveOut" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Кем выдана</label>
+                                <input type="text" id="attorneyPowerGaveOut" name="attorneyPowerGaveOut" data-field="attorneyPowerGaveOut" placeholder="Кем выдана" class="outlined-input" style="width:100%">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="attorneyPowerDate" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Дата выдачи</label>
+                                <input type="date" id="attorneyPowerDate" name="attorneyPowerDate" data-field="attorneyPowerDate" class="outlined-input" style="width:100%">
+                            </div>
                         </div>
 
                         <div class="field-group-title">Транспортное средство</div>
                         <div class="field-grid">
-                            <input type="text" name="carModel" data-field="carModel" placeholder="Марка ТС" class="outlined-input" style="width:100%">
+                            <div style="display:flex;flex-direction:column;gap:4px;">
+                                <label for="carModel" style="font-size:12px;color:var(--md-sys-color-on-surface-variant);">Марка ТС</label>
+                                <input type="text" id="carModel" name="carModel" data-field="carModel" placeholder="Марка ТС" class="outlined-input" style="width:100%">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -429,6 +490,11 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>SEW Templates &copy; 2026 &middot; <a href="https://github.com/Monutor/sew-pattern" target="_blank">GitHub</a></p>
+    </footer>
 
 </body>
 </html>

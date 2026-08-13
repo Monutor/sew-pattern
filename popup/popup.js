@@ -25,13 +25,12 @@
             templateList.innerHTML =
                 '<div class="empty-state">' +
                     '<div class="empty-state-icon">' + ICON_NOTE_ALT + '</div>' +
-                    '<p>Нет шаблонов.<br><a href="#" id="openOptionsLink">Создать шаблон</a></p>' +
+                    '<p>Нет шаблонов.<br><button id="openOptionsBtn" type="button">Создать шаблон</button></p>' +
                 '</div>';
 
-            var link = document.getElementById('openOptionsLink');
-            if (link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
+            var btn = document.getElementById('openOptionsBtn');
+            if (btn) {
+                btn.addEventListener('click', function() {
                     window.open(chrome.runtime.getURL('options/options.html'), '_blank');
                 });
             }

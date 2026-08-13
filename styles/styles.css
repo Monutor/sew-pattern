@@ -35,7 +35,7 @@
 }
 
 .template-selector-label {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     color: var(--md-sys-color-on-secondary-container, #001d35);
     white-space: nowrap;
@@ -43,18 +43,21 @@
 
 .template-dropdown {
     flex: 1;
-    padding: 8px 12px;
+    padding: 0.5rem 0.75rem;
     border: 1px solid #ced4da;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 0.875rem;
     background: white;
     cursor: pointer;
 }
 
 .template-dropdown:focus {
-    outline: none;
     border-color: var(--md-sys-color-primary, #0061a4);
     box-shadow: 0 0 0 3px rgba(0, 97, 164, 0.1);
+}
+
+.template-dropdown:focus:not(:focus-visible) {
+    box-shadow: none;
 }
 
 /* Styles for form inputs when being filled */
@@ -79,7 +82,7 @@ select.filled-field {
     border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -107,11 +110,11 @@ select.filled-field {
 
 .sew-fab-panel {
     position: fixed;
-    bottom: 90px;
-    right: 24px;
+    bottom: 5.625rem;
+    right: 1.5rem;
     z-index: 2147483647;
-    width: 260px;
-    max-height: 360px;
+    width: 16.25rem;
+    max-height: 22.5rem;
     background: white;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -121,8 +124,8 @@ select.filled-field {
 }
 
 .sew-fab-panel-header {
-    padding: 12px 16px;
-    font-size: 14px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: #2c3e50;
     border-bottom: 1px solid #e8e8e8;
@@ -134,8 +137,8 @@ select.filled-field {
 }
 
 .sew-fab-panel-item {
-    padding: 10px 16px;
-    font-size: 13px;
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
     color: #333;
     cursor: pointer;
     border-bottom: 1px solid #f0f0f0;
@@ -148,8 +151,8 @@ select.filled-field {
 }
 
 .sew-fab-panel-empty {
-    padding: 16px;
-    font-size: 12px;
+    padding: 1rem;
+    font-size: 0.75rem;
     color: #7f8c8d;
     text-align: center;
 }
@@ -181,13 +184,13 @@ select.filled-field {
 .modal-header {
     display: flex;
     align-items: center;
-    padding: 16px 24px 12px;
+    padding: 1rem 1.5rem 0.75rem;
     border-bottom: 1px solid #e8e8e8;
-    gap: 12px;
+    gap: 0.75rem;
 }
 .modal-title {
     flex: 1;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--md-sys-color-on-surface, #212121);
 }
@@ -206,28 +209,27 @@ select.filled-field {
     background: var(--md-sys-color-hover, rgba(0,0,0,0.08));
 }
 .modal-body {
-    padding: 16px 24px;
+    padding: 1rem 1.5rem;
     overflow-y: auto;
     flex: 1;
 }
 .modal-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 8px;
-    padding: 12px 24px 16px;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem 1rem;
     border-top: 1px solid #e8e8e8;
 }
 
 /* Outlined input */
 .outlined-input {
     width: 100%;
-    padding: 12px 14px;
+    padding: 0.75rem 0.875rem;
     border: 1px solid var(--md-sys-color-outline, #74777f);
     border-radius: var(--md-sys-shape-corner-small, 8px);
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--md-sys-color-on-surface, #212121);
     background: white;
-    outline: none;
     transition: border-color 0.15s, box-shadow 0.15s;
     box-sizing: border-box;
 }
@@ -235,19 +237,22 @@ select.filled-field {
     border-color: var(--md-sys-color-primary, #0061a4);
     box-shadow: 0 0 0 3px rgba(0, 97, 164, 0.1);
 }
+.outlined-input:focus:not(:focus-visible) {
+    box-shadow: none;
+}
 .outlined-input::placeholder {
     color: var(--md-sys-color-on-surface-variant, #44474f);
 }
 
 /* Buttons */
 .btn-filled {
-    padding: 0 16px;
-    height: 36px;
-    border-radius: 20px;
+    padding: 0 1rem;
+    height: 2.25rem;
+    border-radius: 1.25rem;
     border: none;
     background: var(--md-sys-color-primary, #0061a4);
     color: white;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
     transition: background 0.2s, box-shadow 0.2s;
@@ -257,13 +262,13 @@ select.filled-field {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 .btn-outlined {
-    padding: 0 16px;
-    height: 36px;
-    border-radius: 20px;
+    padding: 0 1rem;
+    height: 2.25rem;
+    border-radius: 1.25rem;
     border: 1px solid var(--md-sys-color-outline, #74777f);
     background: transparent;
     color: var(--md-sys-color-primary, #0061a4);
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
     transition: background 0.15s, border-color 0.15s;
