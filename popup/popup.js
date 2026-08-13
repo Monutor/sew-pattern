@@ -57,11 +57,18 @@
                 var id = this.dataset.templateId;
                 chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
                     if (tabs[0] && tabs[0].id) {
-                        chrome.tabs.sendMessage(tabs[0].id, { action: 'applyTemplate', templateId: id }, function() {
-                            if (chrome.runtime.lastError) {
-                                templateList.innerHTML = '<div class="error-state">' + escapeHtml(chrome.runtime.lastError.message) + '</div>';
-                            }
-                        });
+                chrome.tabs.sendMessage(tabs[0].id, { action: 'applyTemplate', templateId: id }, function() {
+                    var err = chrome.runtime.lastError;
+                    if (err) {
+                        var url = tabs[0] && tabs[0].url;
+                        var onSew = url && /sew\.mvideoeldorado\.ru\//.test(url);
+                        templateList.innerHTML = '<div class="error-state">' +
+                            '<div class="card-icon-wrap" style="margin-bottom:0.75rem;">⚠️</div>' +
+                            '<p><strong>Расширение работает только на SEW</strong></p>' +
+                            '<p>' + (onSew ? 'Страница обновилась — нужна перезагрузка.' : 'Откройте документ в SEW для автозаполнения.') + '</p>' +
+                        '</div>';
+                    }
+                });
                     }
                 });
             });
