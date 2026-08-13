@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SEW Templates Automation",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Automate document field filling in SEW platform using templates.",
   "update_url": "https://raw.githubusercontent.com/Monutor/sew-pattern/master/updates.xml",
   "icons": {
